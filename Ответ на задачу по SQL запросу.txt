@@ -1,0 +1,15 @@
+На сервере есть продукты и категории ( Products и Categories)
+
+таблица product:
+
+CREATE TABLE Products(id_product int, product_name text, kategory_ref int) VALUES(...)
+
+Таблица Categories:
+
+CREATE TABLE Categories(id_kategory int, category_name text,) VALUES(...)
+
+Запрос на получение данных с двух таблиц в паре Имя продукта - Имя категории, с учетом что у продукто может и не быть категории:
+
+SELECT id_product, product_name, category_name
+FROM Products
+LEFT OUTER JOIN Categories ON id_kategory = kategory_ref
